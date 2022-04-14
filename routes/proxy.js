@@ -21,4 +21,15 @@ router.get('/audio/:id', async function (req,res,next){
 
 })
 
+router.get('/programas', async function (req, res) {
+    const programs = await axios.get(url + `/programas`)
+    res.json(programs.data)
+})
+
+router.get('/programas/:id', async function (req, res) {
+    const {id} = req.params
+    const programs = await axios.get(url + `/programas/${id}`)
+    res.json(programs.data)
+})
+
 module.exports = router;
