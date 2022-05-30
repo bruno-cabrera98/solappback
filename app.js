@@ -20,4 +20,8 @@ app.use(cookieParser());
 
 app.use('/', proxyRouter);
 
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+});
+
 module.exports = app;
