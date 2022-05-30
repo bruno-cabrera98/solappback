@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "build-ui":" rm -rf build && cd ../solappfront && npm run build && cp -r build ../solappback",
-    "start-ui": "cd ../solappfront && npm start"
+    "start-ui": "cd ../solappfront && npm start",
+    "deploy": "git push heroku master"
   },
   "dependencies": {
     "axios": "^0.26.1",
