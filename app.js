@@ -18,9 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', proxyRouter);
+app.use(process.env.DIR, proxyRouter);
 
-app.get('*', (req, res) => {
+app.get(process.env.DIR + '*', function(req, res) {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
