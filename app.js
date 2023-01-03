@@ -9,7 +9,7 @@ const proxyRouter = require('./routes/proxy')
 
 var app = express();
 
-app.use(express.static('build'))
+app.use(process.env.DIR, express.static('build'));
 app.use(cors())
 
 app.use(logger('dev'));
