@@ -11,7 +11,7 @@ var app = express();
 
 console.log('Dir', process.env.DIR)
 
-app.use(process.env.DIR, express.static('build'));
+app.use(process.env.DIR, express.static(__dirname + '/build'));
 app.use(cors())
 
 app.use(logger('dev'));
