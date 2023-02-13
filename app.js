@@ -23,6 +23,7 @@ app.use(cookieParser());
 app.use(process.env.DIR, proxyRouter);
 
 app.get(process.env.DIR + '*', function(req, res) {
+    console.log(req.url)
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
